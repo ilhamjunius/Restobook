@@ -25,7 +25,7 @@
 deploy/
 # Dockerfile
 docker-compose.yaml
-.env
+# .env
 
 # Github Action
 .github/
