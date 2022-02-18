@@ -11,7 +11,7 @@ RUN go build -o /project-restobook
 ##
 ## Deploy
 ##
-FROM nginx
+FROM alpine:latest
 WORKDIR /app
 COPY --from=build /project-restobook /project-restobook
 EXPOSE 8000
