@@ -40,10 +40,10 @@ func GetConfig() *AppConfig {
 func initConfig() *AppConfig {
 
 	err := godotenv.Load()
-	// if err != nil {
-	// 	log.Info("Error loading .env file")
+	if err != nil {
+		log.Fatal("Error loading .env file")
 
-	// }
+	}
 
 	var defaultConfig AppConfig
 	defaultConfig.Port = os.Getenv("APP_PORT")
