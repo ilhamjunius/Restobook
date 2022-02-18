@@ -41,7 +41,8 @@ func initConfig() *AppConfig {
 
 	err := godotenv.Load()
 	if err != nil {
-		log.Panic("Error loading .env file")
+		log.info("Error loading .env file")
+
 	}
 
 	var defaultConfig AppConfig
