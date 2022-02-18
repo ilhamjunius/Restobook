@@ -6,4 +6,8 @@ COPY . ./
 RUN go mod download
 COPY *.go ./
 RUN go build -o /project-restobook
-CMD ["/project-restobook"]
+
+FROM alpine:latest
+WORKDIR /project
+COPY --from=build /app /project
+CMD ["./project-restobook"]
