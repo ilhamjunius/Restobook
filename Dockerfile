@@ -11,7 +11,9 @@ RUN go build -o /project-restobook
 ##
 ## Deploy
 ##
-FROM alpine:latest
+FROM nginx
+RUN unlink /etc/localtime
+RUN ln -s /usr/share/zoneinfo/Asia/Singapore /etc/localtime
 WORKDIR /app
 COPY --from=build /project-restobook /project-restobook
 EXPOSE 8000
